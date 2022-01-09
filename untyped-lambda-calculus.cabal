@@ -1,0 +1,45 @@
+cabal-version:      2.4
+name:               untyped-lambda-calculus
+version:            1.0.0.0
+description:        This package provides an simple implementation 
+                    of the untyped lambda calculus, both in its 
+                    syntax and semantics.
+
+license:            NONE
+author:             Adrián Enríquez Ballester
+maintainer:         adrianen@ucm.es
+extra-source-files: test.hs 
+
+library
+    hs-source-dirs:   src
+    default-language: Haskell2010
+    ghc-options:      -Wall -O2
+    other-modules:    CodeGen
+    other-extensions: TemplateHaskell
+    exposed-modules:  Foundation
+                    , Semantics
+                    , Syntax
+
+    build-depends:    base >=4.13.0.0,
+                      template-haskell,
+                      containers
+
+test-suite untyped-lambda-calculus-test
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    ghc-options:      -Wall -O2
+    main-is:          Main.hs
+    other-modules:    Answers.Exercise1,
+                      Answers.Exercise2,
+                      Answers.Exercise4,
+                      Answers.Exercise6,
+                      Answers.Exercise7,
+                      Answers.Exercise8,
+                      Answers.Exercise9,
+                      Answers.Exercise10,
+                      Termination
+
+    build-depends:    base >=4.13.0.0,
+                      hspec,
+                      untyped-lambda-calculus
