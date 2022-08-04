@@ -8,7 +8,7 @@ description:        This package provides an simple implementation
 license:            NONE
 author:             Adrián Enríquez Ballester
 maintainer:         adrianen@ucm.es
-extra-source-files: test.hs 
+extra-source-files: test.sh
 
 library
     hs-source-dirs:   src
